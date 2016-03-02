@@ -3,10 +3,17 @@ package ECOS.logica;
 import java.util.ArrayList;
 
 public class RegresionLineal {
-	/*
-	 * funciocn crear para multipar array list y retornar 
+	/**
+	 * Nombre:                       Daniel MAuricio Alvarez                                                                       
+	 * Fecha :                       28/02/2016
+	 * Descripción:                  funciocn crear para multipar array list y retornar 
 	 * la multiplicacion lista 
 	 * */	
+	
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static ArrayList<Double> MultiplicarLista( ArrayList<Double> num1, ArrayList<Double> num2){
 		
 		ArrayList<Double> resultado = new ArrayList<Double>();
@@ -17,6 +24,10 @@ public class RegresionLineal {
 	/*
 	 * saber el cuadrado de las arraylist devolviendo un arraylist double
 	 * */
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static ArrayList<Double> ListaCuadrada( ArrayList<Double> numeros){
 		
 		ArrayList<Double> resultado = new ArrayList<Double>();
@@ -24,9 +35,15 @@ public class RegresionLineal {
 			resultado.add(numeros.get( x) * numeros.get( x));
 		return resultado;
 	}
-	/*
-	 * crear una un atributo double sumando los numero de la lista
-	 * */
+		/**
+		* descripcion  crear una un atributo double sumando los numero de la lista
+		* @param ArrayList
+		* @return sumatoria
+		*/
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static double Sumatoria( ArrayList<Double> numeros){
 		
 		double sumatoria = 0;
@@ -34,9 +51,15 @@ public class RegresionLineal {
 			sumatoria += x;
 		return sumatoria;
 	}
-	/*
-	 * retorna el numero promedio de un alarraylist double
-	 * */
+	/**
+	* descripcion  crear una un atributo double promedio los numero de la lista
+	* @param ArrayList
+	* @return promedio
+	*/
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static double Promedio( ArrayList<Double> numeros){
 		return Sumatoria(numeros) / numeros.size();
 	}
@@ -45,14 +68,25 @@ public class RegresionLineal {
 	 * resiviendo como parametro el promedio de la
 	 * columna X
 	 * */
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static double N( double promedioX){
 
 		return promedioX * promedioX;
 	}
-	/*
-	 * retorna el valor beta 1 de la regresion lineal
-	 * resiviendo como parametro dos  araaylist doubel 
-	 * */
+	/**
+	* descripcion  retorna el valor beta 1 de la regresion lineal
+	* resiviendo como parametro dos  ArrayList double 
+	* @param ArrayList<Double> num1, ArrayList<Double> num2
+	* @return Beta1
+	*/
+	
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static double Beta1( ArrayList<Double> num1, ArrayList<Double> num2){
 		
 		int N = num1.size();
@@ -63,10 +97,17 @@ public class RegresionLineal {
 		double sumatoriaCuadradaX = Sumatoria(ListaCuadrada( num1));
 		return ((sumatoriaMultiplicarLista) - (( N * promedioX) * promedioY)) / (sumatoriaCuadradaX - (N * CuadradaPromedioX ));
 	}
-	/*
-	 * retorna Rxy de la regresion lienal resividiendo 
-	 * como parametro de dos arratylist double
-	 * */
+	/**
+	* descripcion  retorna el valor RYX de la regresion lineal
+	* resiviendo como parametro dos  ArrayList double 
+	* @param ArrayList<Double> num1, ArrayList<Double> num2
+	* @return Beta1
+	*/
+	
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static double Ryx( ArrayList<Double> num1, ArrayList<Double> num2){
 		
 		int N = num1.size();
@@ -78,20 +119,34 @@ public class RegresionLineal {
 		return ( (N * ( sumatoriaMultiplicarXY) - ( sumatoriaX * sumatoriaY))/ (Math.sqrt((N*sumatoriaCuadradaX - Math.pow(sumatoriaX,2))*(N*sumatoriaCuadradaY - Math.pow(sumatoriaY,2)))));
 	}
 	
-	/*
-	 * retorna la reiz cudadra de de R resiviebdi como
-	 * dos array list ocmo parametros
-	 * */
+	/**
+	* descripcion  retorna el valor R^2 de la regresion lineal
+	* resiviendo como parametro dos  ArrayList double 
+	* @param ArrayList<Double> num1, ArrayList<Double> num2
+	* @return R2
+	*/
+	
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static double R2( ArrayList<Double> num1, ArrayList<Double> num2){
 		
 		double ryx = Ryx( num1, num2);
 		
 		return ryx * ryx;
 	}
-	/*
-	 * retorna el valor de beta cero ctomando como
-	 * parametro dos array list double
-	 * */
+	/**
+	* descripcion  retorna el valor B0 de la regresion lineal
+	* resiviendo como parametro dos  ArrayList double 
+	* @param ArrayList<Double> num1, ArrayList<Double> num2
+	* @return Beta0
+	*/
+	
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static double Beta0( ArrayList<Double> num1, ArrayList<Double> num2){
 
 		double promedioX = Promedio( num1);
@@ -99,10 +154,18 @@ public class RegresionLineal {
 		double b1 = Beta1( num1, num2);
 		return promedioY - 	( b1 * promedioX);
 	}
-	/*
-	 * retorna el valor de Yk resiviendo como parametro dos arraylist 
-	 * double y la constante XK
-	 * */
+	
+	/**
+	* descripcion  etorna el valor Yk de la regresion lineal
+	* resiviendo como parametro dos  ArrayList double  y la constante XK
+	* @param ArrayList<Double> num1, ArrayList<Double> num2, costante xk
+	* @return YK
+	*/
+	
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public static double Yk( ArrayList<Double> num1, ArrayList<Double> num2, double Xk){
 
 		double b1 = Beta1( num1, num2);

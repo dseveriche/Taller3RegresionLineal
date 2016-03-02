@@ -9,6 +9,9 @@ import ECOS.logica.LeerArchivo;
 
 public class main {
 
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
 
 	public static void main(String[] args) {
 

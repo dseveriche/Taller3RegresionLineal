@@ -20,6 +20,11 @@ public class LeerArchivo {
 	 * este metodo est aencargado de lerr el arcchivo asignado y
 	 * almacenarlo en un array list bidimencional 
 	 * */
+	
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
 	public ArrayList<ArrayList<Double>> LeerDatos( String rutaArchivo){
 		// aplicando try para el lanzamiento de datos
 		try{

@@ -5,19 +5,31 @@ import java.util.ArrayList;
 
 import ECOS.logica.*;
 
+
+
+
 public class Consola {
 
+	
 	public Consola() {
 		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * esta fucion crea un arraylist de string para mostrar la
-	 * informacion de una forma mas clara el entregar el resutlado
+	/**
+	* Nombre:                       Daniel MAuricio Alvarez                                                                       
+	* Fecha :                       28/02/2016       
+	* Descripción:                  esta fucion crea un arraylist de string para mostrar la
+	 * informacion de una forma mas clara el entregar el resultado
 	 * los datos que resive son una relacioncion de columna de forma 
 	 * vector lineal un vectro de las cabecerasdel resutlado y unsarraylist
-	 * double de los datos resicibidos 
-	 * */
+	 * double de los datos resicibidosuna breve descripción del programa y lo que hace        
+	*/
+
+	// ----------------------------------------------------------
+	// Métodos
+	// ----------------------------------------------------------
+
+	
 	public ArrayList<ArrayList<String>> RegresionLineal( Integer[][] relaciones, String[] cabezera, ArrayList<ArrayList<Double>> datos, double Yk ){
 		// alamacenas la longitude los caracteres
 		ArrayList<Integer> longitudColumna = new ArrayList<Integer>();
