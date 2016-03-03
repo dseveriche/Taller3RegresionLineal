@@ -28,5 +28,8 @@ java ECOS.main
 usar el archivo 
 RegresionLinea\doc\datos.cvs
 usar xk 386
+heroku link
+https://git.heroku.com/ancient-fortress-58194.git
+
 
 
